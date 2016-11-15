@@ -23,12 +23,20 @@ public static void main(String[] args) {
          );
 
         get("/s01", (req, res) -> {
+            CursoDAO.createTables();
+            return "tablas creadas !!!";
+             }
+         );
+
+        get("/s02", (req, res) -> {
             Map<String, Object> attributes = new HashMap<>();
 
             List<Curso> rpta = CursoDAO.getAllCursos();
             attributes.put("results", rpta);
             return new ModelAndView(attributes, "db.ftl");
         }, new FreeMarkerEngine());
+        
+        
     }
     
 }
