@@ -64,6 +64,23 @@
             </manifest>
           </archive>
         </configuration>
+    </plugin>
+    <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <finalName>lab01</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+          <archive>
+            <manifest>
+              <mainClass>Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>   
+
         <executions>
           <execution>
             <id>build-jar-with-dependencies</id>
