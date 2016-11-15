@@ -18,9 +18,9 @@ public static void main(String[] args) {
         port(Integer.valueOf(System.getenv("PORT")));
         staticFileLocation("/public");
 
-        get("/s00", (req, res) -> {
-            "Este metodo funciona !!!"; 
-        }
+        get("/s00", (req, res) -> 
+            "Este metodo funciona !!!"
+         );
 
         get("/s01", (req, res) -> {
             Map<String, Object> attributes = new HashMap<>();
