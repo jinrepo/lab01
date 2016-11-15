@@ -15,16 +15,20 @@ public class Main {
     
 public static void main(String[] args) {
 
-	    port(Integer.valueOf(System.getenv("PORT")));
-	    staticFileLocation("/public");
+        port(Integer.valueOf(System.getenv("PORT")));
+        staticFileLocation("/public");
 
-	    get("/s01", (req, res) -> {
-	        Map<String, Object> attributes = new HashMap<>();
-                        
-                List<Curso> rpta = CursoDAO.getAllCursos();
-	        attributes.put("results", rpta);
-	        return new ModelAndView(attributes, "db.ftl");
-	      }, new FreeMarkerEngine());
-	}
+        get("/s00", (req, res) -> {
+            "Este metodo funciona !!!"; 
+        }
+
+        get("/s01", (req, res) -> {
+            Map<String, Object> attributes = new HashMap<>();
+
+            List<Curso> rpta = CursoDAO.getAllCursos();
+            attributes.put("results", rpta);
+            return new ModelAndView(attributes, "db.ftl");
+        }, new FreeMarkerEngine());
+    }
     
 }
